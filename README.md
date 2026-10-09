@@ -97,6 +97,7 @@ Lệnh này chụp 3 ảnh và lưu vào `tests/visual/date-checker.spec.ts-snap
 
 Mở 3 ảnh của máy mình ra xem giao diện có đúng không rồi mới dùng làm ảnh chuẩn.
 Mỗi máy và mỗi hệ điều hành render font khác nhau một chút, nên **mỗi người tự tạo ảnh chuẩn trên máy mình**. Không dùng ảnh của máy khác.
+Vì vậy thư mục ảnh chuẩn đã được đưa vào `.gitignore` và không được push lên GitHub.
 
 ✅ Cài xong. Chuyển sang Phần B.
 

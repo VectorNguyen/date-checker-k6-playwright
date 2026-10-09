@@ -3,3 +3,6 @@ dist/
 playwright-report/
 test-results/
 .env
+
+# Ảnh chuẩn visual test: mỗi máy tự tạo bằng npm run test:visual:update
+tests/visual/**/*-snapshots/

@@ -18,19 +18,22 @@ export function getMaxDaysInMonth(month, year) {
 }
 
 export function validateDate(dayInput, monthInput, yearInput) {
-  const day = Number(dayInput);
-  const month = Number(monthInput);
-  const year = Number(yearInput);
+  // Chỉ chấp nhận chuỗi chữ số (vd: "29", "08"). Chặn "1e1", "0x10", "5.0", "-3", "".
+  const isDigits = value => value !== null && value !== undefined && /^\d+$/.test(String(value).trim());
 
-  if (dayInput === '' || dayInput === null || dayInput === undefined || isNaN(day) || !Number.isInteger(day)) {
+  if (!isDigits(dayInput)) {
     return { isValid: false, reason: 'Ngày phải là một số nguyên dương.', field: 'day' };
   }
-  if (monthInput === '' || monthInput === null || monthInput === undefined || isNaN(month) || !Number.isInteger(month)) {
+  if (!isDigits(monthInput)) {
     return { isValid: false, reason: 'Tháng phải là một số nguyên dương.', field: 'month' };
   }
-  if (yearInput === '' || yearInput === null || yearInput === undefined || isNaN(year) || !Number.isInteger(year)) {
+  if (!isDigits(yearInput)) {
     return { isValid: false, reason: 'Năm phải là một số nguyên dương.', field: 'year' };
   }
+
+  const day = Number(String(dayInput).trim());
+  const month = Number(String(monthInput).trim());
+  const year = Number(String(yearInput).trim());
 
   if (year < 1 || year > 9999) {
     return { isValid: false, reason: 'Năm phải nằm trong khoảng từ 1 đến 9999.', field: 'year' };
