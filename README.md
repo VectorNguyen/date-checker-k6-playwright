@@ -1,6 +1,4 @@
-# Date Time Checker — k6 + Playwright
-
-Dựa trên https://github.com/ryocoding13/test_playwright (giữ giao diện, các test E2E và logic kiểm tra ngày của dự án gốc).
+# Date Time Checker — k6 + 
 
 ## Chuẩn bị (Windows / PowerShell)
 
